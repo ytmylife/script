@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasaba girmek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('login-background.jpg') no-repeat center center/cover;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .container h2 {
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .container label {
+            display: block;
+            text-align: left;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #f1f1f1;
+            font-size: 1em;
+        }
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #FFD700;
+            color: #1a1a1a;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .container input[type="submit"]:hover {
+            background-color: #e5c100;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hasaba girmek</h2>
+        <form method="POST" action="/login">
+            <label for="username">Ulanyjy ady:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Kodunyz:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Girmek">
+        </form>
+    </div>
+</body>
+</html>
