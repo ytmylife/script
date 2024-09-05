@@ -23,32 +23,6 @@ vps_ip = ip_almak()
 DATABASE_IAM = 'config.txt'
 DATABASE_USER = 'users.json'
 DATABASE_IPS = 'ips.json'
-DATABASE_CATEGORY = 'category.json'
-
-def get_db_connection():
-    connection = sqlite3.connect('database/products.db')
-    connection.row_factory = sqlite3.Row
-    return connection
-
-def create_database():
-    connection = sqlite3.connect('database/products.db')
-    cursor = connection.cursor()
-
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS product (
-        product_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        about TEXT,
-        price REAL NOT NULL,
-        stock INTEGER NOT NULL
-    )
-    ''')
-
-    connection.commit()
-    cursor.close()
-    connection.close()
-
-create_database()
 
 # Giriş
 login_page = '''
@@ -289,7 +263,7 @@ main_page = '''
             <li><a href="/addssh">Ssh goşmak</a></li>
             <li><a href="/addvmess">Vmess goşmak</a></li>
             <li><a href="/addvless">Vless goşmak</a></li>
-            <li><a href="/addtrojan">Vrojan goşmak</a></li>
+            <li><a href="/addtrojan">Trojan goşmak</a></li>
             <li><a href="/addshadowsocks">Shadowsocks goşmak</a></li>
             <li><a href="/addsocks">Socks goşmak</a></li>
             <li><a href="/remove">Ulanyjy Pozmak</a></li>
